@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Démos, répétition espacée</title>
+<meta name="theme-color" content="#5b68db">
+<meta name="description" content="Définitions, théorèmes et démonstrations à maîtriser durablement.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>
+:root{color-scheme:light;--bg:#f5f6fa;--surface:#fff;--surface-2:#f0f2f8;--text:#172033;--muted:#748099;--line:#e2e6ef;--accent:#5b68db;--accent-strong:#4653c7;--accent-soft:#eef0ff;--success:#16865b;--success-bg:#e7f6ef;--warning:#b87918;--warning-bg:#fff4df;--danger:#c34b55;--danger-bg:#fff0f1;--shadow:0 16px 40px rgba(31,42,75,.07);--radius:20px;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#101522;--surface:#191f2f;--surface-2:#20283a;--text:#edf1fc;--muted:#9aa6bd;--line:#2c3549;--accent:#9aa4ff;--accent-strong:#b1b8ff;--accent-soft:#292e4d;--success:#64d7a0;--success-bg:#1c3b32;--warning:#f0bd68;--warning-bg:#3e3020;--danger:#ff8e96;--danger-bg:#41282e;--shadow:0 18px 45px rgba(0,0,0,.22)}
+*{box-sizing:border-box}html{scroll-padding-top:20px}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -15%,rgba(91,104,219,.10),transparent 42%),var(--bg);color:var(--text);font:15px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.01em}button,select,input,textarea{font:inherit;color:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 48%,transparent);outline-offset:3px}
+main{width:min(100% - 32px,760px);margin:0 auto;padding:34px 0 56px}.masthead{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:30px}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,var(--accent),#8390ff);color:white;display:grid;place-items:center;font:700 20px/1 Georgia,serif;box-shadow:0 8px 18px rgba(91,104,219,.22)}.brand-name{font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.brand-caption{font-size:.78rem;color:var(--muted);margin-top:1px}.theme-toggle{width:42px;height:42px;border:1px solid var(--line);background:var(--surface);border-radius:14px;display:grid;place-items:center;font-size:18px;transition:.2s}.theme-toggle:hover{transform:translateY(-2px);border-color:var(--accent)}.intro{margin:0 0 24px}.eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:7px}.intro h1{font:500 clamp(2rem,7vw,2.7rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:0}.intro p{color:var(--muted);margin:9px 0 0;font-size:.94rem}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:5px;border:1px solid var(--line);background:var(--surface);border-radius:16px;margin:0 0 22px;box-shadow:0 4px 14px rgba(25,34,60,.035)}.tabs button{border:0;border-radius:11px;background:transparent;color:var(--muted);padding:11px 8px;font-size:.88rem;font-weight:700;transition:background .18s,color .18s}.tabs button:hover{color:var(--text);background:var(--surface-2)}.tabs button.on{background:var(--accent-soft);color:var(--accent-strong)}
+.view{min-height:360px}.filter-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 12px}.filter-row label{font-size:.82rem;color:var(--muted);font-weight:600}.select-wrap select{appearance:none;background:var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23748099' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 13px center;border:1px solid var(--line);border-radius:11px;padding:9px 34px 9px 12px;font-size:.82rem;max-width:210px}.study-card{position:relative;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,5vw,32px);box-shadow:var(--shadow)}.study-card:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--accent),#a6adff 70%,transparent)}.card-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:22px}.chapter-chip,.type-chip,.counter-chip{display:inline-flex;align-items:center;min-height:26px;border-radius:30px;padding:4px 10px;font-size:.7rem;font-weight:750;letter-spacing:.02em}.chapter-chip{background:var(--accent-soft);color:var(--accent-strong)}.type-chip{background:var(--surface-2);color:var(--muted)}.counter-chip{margin-left:auto;color:var(--muted);border:1px solid var(--line);font-weight:650}.study-question{font:500 clamp(1.35rem,4vw,1.75rem)/1.35 Georgia,"Times New Roman",serif;letter-spacing:-.025em;margin:0 0 13px}.hint{font-size:.9rem;color:var(--muted);margin:0}.primary-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;border-radius:13px;padding:14px 18px;margin-top:23px;background:var(--accent);color:#fff;font-weight:750;font-size:.9rem;box-shadow:0 8px 18px rgba(91,104,219,.18);transition:transform .18s,filter .18s}.primary-btn:hover{transform:translateY(-1px);filter:brightness(1.05)}.primary-btn .arrow{font-size:1.1rem}.answer{margin-top:22px;padding:20px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px 14px 14px 4px;background:var(--surface-2);font:1rem/1.8 Georgia,"Times New Roman",serif;white-space:pre-wrap;overflow-wrap:anywhere}.answer p{margin:0 0 10px}.grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:16px}.grade-btn{min-width:0;border:1px solid var(--line);border-radius:13px;background:var(--surface);padding:12px 6px;display:flex;flex-direction:column;align-items:center;gap:2px;transition:transform .18s,border-color .18s,background .18s}.grade-btn:hover{transform:translateY(-2px)}.grade-btn b{font-size:.86rem}.grade-btn small{font-size:.69rem;color:var(--muted)}.grade-btn.ko{border-color:color-mix(in srgb,var(--danger) 35%,var(--line));background:var(--danger-bg);color:var(--danger)}.grade-btn.mid{border-color:color-mix(in srgb,var(--warning) 35%,var(--line));background:var(--warning-bg);color:var(--warning)}.grade-btn.ok{border-color:color-mix(in srgb,var(--success) 35%,var(--line));background:var(--success-bg);color:var(--success)}.keyboard-hint{text-align:center;color:var(--muted);font-size:.72rem;margin:13px 0 0}.key{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border:1px solid var(--line);border-radius:5px;background:var(--surface);font-size:.67rem;font-weight:700}
+.empty-state{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:38px 24px;text-align:center;box-shadow:var(--shadow)}.empty-icon{width:54px;height:54px;display:grid;place-items:center;margin:0 auto 15px;border-radius:18px;background:var(--success-bg);color:var(--success);font-size:24px}.empty-state h2{font:500 1.55rem Georgia,serif;margin:0 0 8px}.empty-state p{color:var(--muted);margin:0;font-size:.9rem}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:26px 0 11px}.section-heading h2{font:500 1.35rem Georgia,"Times New Roman",serif;margin:0}.section-heading p{font-size:.78rem;color:var(--muted);margin:0}.library-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.library-head span{font-size:.78rem;color:var(--muted)}.add-card{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:0 15px;margin-bottom:22px;box-shadow:0 4px 15px rgba(25,34,60,.025)}.add-card summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 0;font-weight:750;font-size:.88rem;cursor:pointer}.add-card summary::-webkit-details-marker{display:none}.add-card summary:after{content:"＋";font-size:1.2rem;color:var(--accent)}.add-form{display:grid;gap:10px;padding:0 0 15px}.field{display:grid;gap:5px}.field label{font-size:.75rem;font-weight:700;color:var(--muted)}input,textarea,.field select{width:100%;border:1px solid var(--line);border-radius:10px;background:var(--surface-2);padding:11px 12px;font-size:.86rem;resize:vertical}.field select{appearance:auto}.add-form .primary-btn{margin-top:2px}.chapter-section{margin:22px 0}.chapter-title{display:flex;align-items:center;gap:10px;margin:0 0 9px;font-size:.79rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--muted)}.chapter-title:after{content:"";height:1px;flex:1;background:var(--line)}.library-item{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:7px;padding:0 13px;transition:border-color .18s}.library-item[open]{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}.library-item summary{list-style:none;display:flex;align-items:center;gap:10px;padding:13px 0;cursor:pointer}.library-item summary::-webkit-details-marker{display:none}.status-dot{width:8px;height:8px;border-radius:50%;background:#c0c7d5;flex:none}.status-dot.d1{background:var(--warning)}.status-dot.d2{background:var(--success)}.summary-title{font-size:.84rem;font-weight:650;flex:1;min-width:0}.type-tag{font-size:.66rem;color:var(--muted);white-space:nowrap}.chevron{color:var(--muted);font-size:.8rem;transition:transform .18s}.library-item[open] .chevron{transform:rotate(180deg)}.library-answer{border-top:1px solid var(--line);padding:13px 3px 15px;color:var(--text);font: .94rem/1.8 Georgia,"Times New Roman",serif;white-space:pre-wrap;overflow-wrap:anywhere}.library-answer p{margin:0}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 13px;box-shadow:0 4px 16px rgba(25,34,60,.025)}.stat-value{display:block;font:500 1.9rem/1.2 Georgia,serif;letter-spacing:-.04em}.stat-label{display:block;margin-top:5px;color:var(--muted);font-size:.72rem;line-height:1.35}.progress-card{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:18px;margin:12px 0}.progress-title{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px;font-weight:750;font-size:.86rem}.progress-title span:last-child{font-size:.75rem;color:var(--muted);font-weight:600}.progress-bar{display:flex;height:11px;border-radius:20px;overflow:hidden;background:var(--surface-2);gap:2px}.progress-bar .ok{background:var(--success)}.progress-bar .mid{background:var(--warning)}.progress-bar .new{background:var(--surface-2)}.progress-legend{display:flex;flex-wrap:wrap;gap:13px;margin-top:11px;color:var(--muted);font-size:.72rem}.legend-dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px}.days{display:grid;grid-template-columns:repeat(14,1fr);gap:5px;align-items:end;height:88px;padding-top:8px}.day-cell{height:100%;display:flex;align-items:end;background:var(--surface-2);border-radius:5px;overflow:hidden}.day-cell span{display:block;width:100%;min-height:3px;background:linear-gradient(180deg,var(--accent),var(--accent-strong));border-radius:4px 4px 2px 2px}.day-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:.67rem;margin-top:7px}.chapter-row{display:grid;grid-template-columns:minmax(90px,130px) 1fr 32px;gap:10px;align-items:center;margin:12px 0;font-size:.78rem}.chapter-row>span:first-child{color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.chapter-row .progress-bar{height:8px}.chapter-count{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-size:.72rem}.reset-btn{margin-top:17px;border:0;background:transparent;color:var(--muted);text-decoration:underline;text-underline-offset:3px;font-size:.75rem;padding:8px 0}.footer-note{text-align:center;color:var(--muted);font-size:.7rem;margin:34px 0 0}.mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden}.answer .mjx-container[display="true"],.library-answer .mjx-container[display="true"]{margin: .65em 0!important}.study-question .mjx-container{display:inline-block!important}
+@media(max-width:520px){main{width:min(100% - 24px,760px);padding:22px 0 42px}.masthead{margin-bottom:25px}.intro{margin-bottom:21px}.stats-grid{gap:7px}.stat-card{padding:13px 9px}.stat-value{font-size:1.65rem}.stat-label{font-size:.66rem}.chapter-row{grid-template-columns:90px 1fr 27px;gap:7px}.type-tag{display:none}.summary-title{font-size:.8rem}.study-card{border-radius:19px}.grade-grid{gap:6px}.grade-btn{padding:11px 3px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style></head><body><main>
+<header class="masthead"><div class="brand"><div class="brand-mark">∑</div><div><div class="brand-name">Atelier des démonstrations</div><div class="brand-caption">Comprendre · retenir · maîtriser</div></div></div><button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer le thème" title="Changer le thème">◐</button></header>
+<section class="intro"><div class="eyebrow">Ton espace de mémorisation</div><h1>Démos & répétition espacée.</h1><p>Les définitions, théorèmes et preuves à maîtriser durablement.</p></section>
+<nav id="t" class="tabs" aria-label="Navigation"></nav><section id="v" class="view"></section><p class="footer-note">Une preuve comprise aujourd’hui, une preuve maîtrisée demain.</p>
+</main>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','pre','code']},
+  startup: {typeset: false}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+const D=[
+  [
+    "Ensembles",
+    "D",
+    "Injectivité, surjectivité et bijectivité",
+    "Soit \\(f:E\\to F\\).\n• Injective : \\(f(x)=f(y)\\Rightarrow x=y\\).\n• Surjective : \\(\\forall y\\in F,\\;\\exists x\\in E,\\;f(x)=y\\).\n• Bijective : injective et surjective, autrement dit \\(\\forall y\\in F,\\;\\exists!x\\in E,\\;f(x)=y\\)."
+  ],
+  [
+    "Ensembles",
+    "P",
+    "Démontrer le binôme de Newton : \( (a+b)^n=\sum_{k=0}^{n}\binom{n}{k}a^k b^{n-k} \)",
+    "On raisonne par récurrence sur \\(n\\).\nHérédité : on multiplie l’égalité au rang \\(n\\) par \\(a+b\\), puis on regroupe les termes de même puissance. Le coefficient de \\(a^k b^{n+1-k}\\) devient\n\\[\\binom{n}{k}+\\binom{n}{k-1}=\\binom{n+1}{k},\\]\ngrâce à la formule de Pascal. On obtient ainsi le rang \\(n+1\\)."
+  ],
+  [
+    "Arithmétique",
+    "P",
+    "Démontrer que \\(\\sqrt{2}\\) est irrationnel",
+    "Par l’absurde, supposons \\(\\sqrt{2}=p/q\\), avec \\(p,q\\in\\mathbb Z\\), \\(q\\ne0\\) et \\(\\gcd(p,q)=1\\).\nAlors \\(p^2=2q^2\\), donc \\(p\\) est pair : écrivons \\(p=2k\\). On obtient alors \\(q^2=2k^2\\), donc \\(q\\) est pair.\nC’est contradictoire avec \\(\\gcd(p,q)=1\\)."
+  ],
+  [
+    "Arithmétique",
+    "T",
+    "Énoncer Bézout et le lemme de Gauss",
+    "Bézout. \\(\\gcd(a,b)=1\\iff\\exists(u,v)\\in\\mathbb Z^2,\\;au+bv=1\\).\nGauss. Si \\(a\\mid bc\\) et \\(\\gcd(a,b)=1\\), alors \\(a\\mid c\\)."
+  ],
+  [
+    "Arithmétique",
+    "P",
+    "Démontrer le lemme de Gauss",
+    "Comme \\(\\gcd(a,b)=1\\), Bézout donne \\(au+bv=1\\). En multipliant par \\(c\\) :\n\\[c=acu+bcv.\\]\nOr \\(a\\mid ac\\) et, par hypothèse, \\(a\\mid bc\\). Donc \\(a\\mid c\\)."
+  ],
+  [
+    "Arithmétique",
+    "P",
+    "Démontrer qu’il existe une infinité de nombres premiers",
+    "Par l’absurde, supposons que les nombres premiers soient exactement \\(p_1,\\ldots,p_n\\). Posons\n\\[N=p_1p_2\\cdots p_n+1.\\]\nComme \\(N\\ge2\\), il possède un diviseur premier, nécessairement l’un des \\(p_i\\). Mais alors \\(p_i\\mid N-p_1\\cdots p_n=1\\), contradiction."
+  ],
+  [
+    "Suites",
+    "D",
+    "Définition de la convergence d’une suite",
+    "La suite \\((u_n)\\) converge vers \\(\\ell\\) si\n\\[\\forall\\varepsilon>0,\\;\\exists N\\in\\mathbb N,\\;\\forall n\\ge N,\\quad |u_n-\\ell|\\le\\varepsilon.\\]"
+  ],
+  [
+    "Suites",
+    "P",
+    "Démontrer : toute suite croissante et majorée converge",
+    "Posons \\(\\ell=\\sup\\{u_n:n\\in\\mathbb N\\}\\). Soit \\(\\varepsilon>0\\). Par définition de la borne supérieure, il existe \\(N\\) tel que \\(u_N>\\ell-\\varepsilon\\).\nPour tout \\(n\\ge N\\), la croissance donne\n\\[\\ell-\\varepsilon<u_N\\le u_n\\le\\ell,\\]\ndonc \\(|u_n-\\ell|\\le\\varepsilon\\). Ainsi \\((u_n)\\) converge vers \\(\\ell\\)."
+  ],
+  [
+    "Suites",
+    "T",
+    "Théorème de Bolzano–Weierstrass",
+    "Toute suite réelle bornée admet une suite extraite convergente.\nIdée de preuve : on effectue une dichotomie d’un segment qui contient tous les termes, en conservant à chaque étape une moitié contenant une infinité de termes. On construit ainsi des intervalles emboîtés dont les longueurs tendent vers \\(0\\), puis une extraction convergente."
+  ],
+  [
+    "Suites",
+    "T",
+    "Suites adjacentes",
+    "Si \\((u_n)\\) est croissante, \\((v_n)\\) décroissante et \\(v_n-u_n\\to0\\), alors les deux suites convergent vers la même limite.\nEn effet, \\(u_0\\le u_n\\le v_n\\le v_0\\) : les deux suites sont monotones et bornées, donc convergentes. Comme \\(v_n-u_n\\to0\\), leurs limites sont égales."
+  ],
+  [
+    "Continuité",
+    "T",
+    "Théorème des valeurs intermédiaires",
+    "Si \\(f\\) est continue sur \\([a,b]\\) et si \\(f(a)f(b)\\le0\\), alors\n\\[\\exists c\\in[a,b],\\quad f(c)=0.\\]\nIdée de preuve : dichotomie sur \\([a,b]\\), ou bien on pose \\(c=\\sup\\{x\\in[a,b]:f(x)\\le0\\}\\) lorsque \\(f(a)\\le0\\le f(b)\\)."
+  ],
+  [
+    "Continuité",
+    "T",
+    "Théorème des bornes atteintes",
+    "Toute fonction continue sur un segment est bornée et atteint ses bornes.\nIdée de preuve : on choisit une suite \\((x_n)\\) telle que \\(f(x_n)\\to M=\\sup f\\). Par Bolzano–Weierstrass, une sous-suite converge vers un point \\(c\\) du segment. Par continuité, \\(f(c)=M\\) : le maximum est donc fini et atteint. On raisonne de même pour le minimum."
+  ],
+  [
+    "Dérivation",
+    "D",
+    "Dérivabilité en un point et lien avec la continuité",
+    "La fonction \\(f\\) est dérivable en \\(a\\) si le taux d’accroissement admet une limite finie :\n\\[f'(a)=\\lim_{x\\to a}\\frac{f(x)-f(a)}{x-a}.\\]\nCela équivaut à\n\\[f(x)=f(a)+f'(a)(x-a)+o(x-a).\\]\nEn particulier, \\(f\\) est continue en \\(a\\), car \\(f(x)-f(a)\\to0\\)."
+  ],
+  [
+    "Dérivation",
+    "T",
+    "Théorème de Rolle",
+    "Si \\(f\\) est continue sur \\([a,b]\\), dérivable sur \\(]a,b[\\) et vérifie \\(f(a)=f(b)\\), alors\n\\[\\exists c\\in]a,b[\\quad f'(c)=0.\\]\nPreuve : par le théorème des bornes atteintes, \\(f\\) atteint ses extrema. Si \\(f\\) est constante, le résultat est immédiat. Sinon, au moins un extremum est atteint en un point intérieur ; le théorème de Fermat donne alors \\(f'(c)=0\\)."
+  ],
+  [
+    "Dérivation",
+    "P",
+    "Démontrer le théorème des accroissements finis",
+    "Soit \\(f\\) continue sur \\([a,b]\\) et dérivable sur \\(]a,b[\\). Posons\n\\[k=\\frac{f(b)-f(a)}{b-a},\\qquad g(x)=f(x)-f(a)-k(x-a).\\]\nAlors \\(g(a)=g(b)=0\\). Le théorème de Rolle appliqué à \\(g\\) donne un \\(c\\in]a,b[\\) tel que \\(g'(c)=0\\). Ainsi\n\\[f(b)-f(a)=f'(c)(b-a).\\]"
+  ],
+  [
+    "Dérivation",
+    "T",
+    "Formule de Taylor–Young",
+    "Si \\(f\\) est \\(n\\) fois dérivable en \\(a\\), alors, lorsque \\(x\\to a\\),\n\\[f(x)=\\sum_{k=0}^{n}\\frac{f^{(k)}(a)}{k!}(x-a)^k+o\\big((x-a)^n\\big).\\]"
+  ],
+  [
+    "Intégration",
+    "P",
+    "Démontrer le théorème fondamental de l’analyse",
+    "Soit \\(f\\) continue et \\(F(x)=\\int_a^x f(t)\\,dt\\). On écrit\n\\[\\frac{F(x+h)-F(x)}h-f(x)=\\frac1h\\int_x^{x+h}(f(t)-f(x))\\,dt.\\]\nLa valeur absolue du membre de droite est majorée par \\(\\sup_{|t-x|\\le|h|}|f(t)-f(x)|\\), qui tend vers \\(0\\) par continuité de \\(f\\) en \\(x\\). Donc \\(F'(x)=f(x)\\)."
+  ],
+  [
+    "Algèbre linéaire",
+    "D",
+    "Sous-espace vectoriel",
+    "Une partie \\(F\\subset E\\) est un sous-espace vectoriel si\n\\[0_E\\in F\\quad\\text{et}\\quad\\forall x,y\\in F,\\;\\forall\\lambda,\\mu\\in\\mathbb K,\\;\\lambda x+\\mu y\\in F.\\]"
+  ],
+  [
+    "Algèbre linéaire",
+    "D",
+    "Famille libre, génératrice et base",
+    "• Libre : \\(\\sum_{i=1}^{n}\\lambda_i x_i=0\\Rightarrow\\lambda_1=\\cdots=\\lambda_n=0\\).\n• Génératrice : \\(\\operatorname{Vect}(x_1,\\ldots,x_n)=E\\).\n• Base : famille libre et génératrice ; tout vecteur possède alors une unique décomposition comme combinaison linéaire des vecteurs de la base."
+  ],
+  [
+    "Algèbre linéaire",
+    "P",
+    "Démontrer : \\(f\\) injective si et seulement si \\(\\ker f=\\{0\\}\\)",
+    "\\((\\Rightarrow)\\) Si \\(f(x)=0=f(0)\\), l’injectivité donne \\(x=0\\).\n\\((\\Leftarrow)\\) Si \\(f(x)=f(y)\\), alors \\(f(x-y)=0\\). Donc \\(x-y\\in\\ker f=\\{0\\}\\), d’où \\(x=y\\)."
+  ],
+  [
+    "Algèbre linéaire",
+    "P",
+    "Démontrer le théorème du rang",
+    "Soit \\( (e_1,\\ldots,e_k)\\) une base de \\(\\ker f\\), que l’on complète en une base \\( (e_1,\\ldots,e_n)\\) de \\(E\\).\nLes vecteurs \\(f(e_{k+1}),\\ldots,f(e_n)\\) forment une base de \\(\\operatorname{Im}f\\). Ainsi\n\\[\\dim E=\\dim\\ker f+\\operatorname{rg}f.\\]"
+  ],
+  [
+    "Algèbre linéaire",
+    "T",
+    "Formule de Grassmann",
+    "Pour deux sous-espaces vectoriels \\(F,G\\) d’un espace de dimension finie :\n\\[\\dim(F+G)=\\dim F+\\dim G-\\dim(F\\cap G).\\]\nPreuve : on applique le théorème du rang à \\( (x,y)\\mapsto x+y\\), de \\(F\\times G\\) dans \\(E\\). Son noyau \\(\\{(x,-x):x\\in F\\cap G\\}\\) est isomorphe à \\(F\\cap G\\)."
+  ],
+  [
+    "Groupes",
+    "P",
+    "Démontrer le théorème de Lagrange",
+    "Soit \\(G\\) un groupe fini et \\(H\\) un sous-groupe. Les classes \\(xH\\) ont toutes \\( |H| \\) éléments, car l’application \\(y\\mapsto xy\\) est bijective. Elles partitionnent \\(G\\).\nAinsi \\(|G|\\) est le produit du nombre de classes par \\(|H|\\), donc \\(|H|\\) divise \\(|G|\\)."
+  ],
+  [
+    "Probabilités",
+    "T",
+    "Probabilités totales et formule de Bayes",
+    "Si \\( (A_i)_{i=1}^{n}\\) est un système complet d’événements :\n\\[P(B)=\\sum_{i=1}^{n}P(B\\mid A_i)P(A_i).\\]\nPour \\(P(B)>0\\), la formule de Bayes s’écrit\n\\[P(A_j\\mid B)=\\frac{P(B\\mid A_j)P(A_j)}{P(B)}.\\]"
+  ],
+  [
+    "Probabilités",
+    "P",
+    "Démontrer l’inégalité de Bienaymé–Tchebychev",
+    "Pour \\(\\varepsilon>0\\) :\n\\[P(|X-\\mathbb E(X)|\\ge\\varepsilon)\\le\\frac{\\operatorname{Var}(X)}{\\varepsilon^2}.\\]\nPreuve : on applique l’inégalité de Markov à la variable positive \\((X-\\mathbb E(X))^2\\) :\n\\[P((X-\\mathbb E(X))^2\\ge\\varepsilon^2)\\le\\frac{\\mathbb E[(X-\\mathbb E(X))^2]}{\\varepsilon^2}=\\frac{\\operatorname{Var}(X)}{\\varepsilon^2}.\\]"
+  ],
+  [
+    "Probabilités",
+    "P",
+    "Espérance et variance d’une loi binomiale",
+    "Si \\(X\\sim\\mathcal B(n,p)\\), on peut écrire \\(X=X_1+\\cdots+X_n\\), où les \\(X_i\\) sont des variables de Bernoulli indépendantes de paramètre \\(p\\).\nPar linéarité de l’espérance et additivité des variances indépendantes :\n\\[\\mathbb E(X)=np,\\qquad\\operatorname{Var}(X)=np(1-p).\\]"
+  ],
+  [
+    "Informatique",
+    "D",
+    "Définition de \\(f=O(g)\\) et complexité",
+    "On écrit \\(f=O(g)\\) s’il existe \\(C>0\\) et \\(n_0\\) tels que\n\\[\\forall n\\ge n_0,\\quad |f(n)|\\le C|g(n)|.\\]\nLa complexité mesure le nombre d’opérations élémentaires, généralement dans le pire cas, en fonction de la taille de l’entrée."
+  ],
+  [
+    "Informatique",
+    "P",
+    "Terminaison et correction de l’algorithme d’Euclide",
+    "Terminaison : le reste est un entier positif ou nul strictement décroissant ; il constitue un variant.\nCorrection : on utilise l’invariant\n\\[\\operatorname{pgcd}(a,b)=\\operatorname{pgcd}(b,a\\bmod b),\\]\nqui découle de la division euclidienne \\(a=bq+r\\)."
+  ]
+];
+const $=s=>document.querySelector(s),E=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","\'":"&#39;"}[m])),TY={D:"Définition",T:"Théorème",P:"Démonstration"};
+let S;try{S=JSON.parse(localStorage.getItem("rd"))}catch(e){}S=S||{c:{},x:[],l:{}};
+let tab=0,Q=[],show=false,built=false,F="*",mathReady=false;
+const save=()=>{try{localStorage.setItem("rd",JSON.stringify(S))}catch(e){}};
+const today=()=>{const d=new Date();return Math.floor((d-d.getTimezoneOffset()*6e4)/864e5)};
+const all=()=>D.map((c,i)=>({id:"d"+i,ch:c[0],ty:c[1],q:c[2],a:c[3]})).concat(S.x);
+const st=c=>{const s=S.c[c.id];return!s?0:s.i>=21?2:1};
+const chs=()=>[...new Set(all().map(c=>c.ch))];
+function nx(o,q){const s=Object.assign({e:2.5,i:0,r:0,l:0},o);
+ if(q==1){s.r=0;s.i=1;s.l++;s.e=Math.max(1.3,s.e-.2)}
+ else{if(q==3){s.e=Math.max(1.3,s.e-.15);s.i=s.r?Math.max(2,Math.round(s.i*1.2)):1}else{s.e+=.1;s.i=s.r==0?2:s.r==1?6:Math.round(s.i*s.e)}s.r++}
+ return s}
+function build(){const t=today(),L=all().filter(c=>F=="*"||c.ch==F),n=(S.l[t]||{}).n||0;
+ Q=L.filter(c=>S.c[c.id]&&S.c[c.id].d<=t).sort((a,b)=>S.c[a.id].d-S.c[b.id].d).concat(L.filter(c=>!S.c[c.id]).slice(0,Math.max(0,6-n)));built=true}
+function grade(q){const c=Q.shift(),t=today(),nw=!S.c[c.id],s=nx(S.c[c.id],q);s.d=t+(q==1?0:s.i);S.c[c.id]=s;
+ const l=S.l[t]=S.l[t]||{r:0,n:0};l.r++;if(nw)l.n++;if(q==1)Q.push(c);save();show=false;render()}
+function streak(){let n=0,d=today();if(!(S.l[d]&&S.l[d].r))d--;while(S.l[d]&&S.l[d].r){n++;d--}return n}
+function mathTypeset(){if(!mathReady||!window.MathJax?.typesetPromise)return;const target=$("#v");try{MathJax.typesetClear?.([target]);MathJax.typesetPromise([target]).catch(()=>{})}catch(e){}}
+window.addEventListener("load",()=>{if(window.MathJax?.typesetPromise){mathReady=true;mathTypeset()}});
+function rv(){if(!built)build();
+ const sel=`<div class="filter-row"><label for="fl">CHAPITRE À RÉVISER</label><div class="select-wrap"><select id="fl" onchange="F=this.value;built=false;show=false;render()"><option value="*">Tous les chapitres</option>${chs().map(c=>`<option value="${E(c)}"${c==F?" selected":""}>${E(c)}</option>`).join("")}</select></div></div>`;
+ if(!Q.length){const t=today(),n=all().filter(c=>S.c[c.id]&&S.c[c.id].d==t+1).length;
+  return sel+`<div class="empty-state"><div class="empty-icon">✓</div><h2>Séance terminée</h2><p>${n?`Tu as terminé pour aujourd’hui. ${n} carte${n>1?"s":""} à revoir demain.`:"Aucune carte prévue demain. Profite de cette avance."}</p></div>`}
+ const c=Q[0],s=S.c[c.id];
+ let h=sel+`<article class="study-card"><div class="card-meta"><span class="chapter-chip">${E(c.ch)}</span><span class="type-chip">${TY[c.ty]}</span><span class="counter-chip">${Q.length} restante${Q.length>1?"s":""}</span></div><h2 class="study-question">${E(c.q)}</h2>`;
+ if(!show)h+=`<p class="hint">${c.ty=="P"?"Refais la démonstration sur papier avant de consulter la correction.":"Essaie de retrouver la réponse sans regarder ton cours."}</p><button class="primary-btn" onclick="rev()">Afficher la correction <span class="arrow">→</span></button><p class="keyboard-hint">Raccourci : <span class="key">Espace</span> pour révéler</p>`;
+ else h+=`<div class="answer">${E(c.a)}</div><div class="grade-grid">${[["Raté",1,"ko"],["Hésité",3,"mid"],["Réussi",5,"ok"]].map(([n,q,k],i)=>`<button class="grade-btn ${k}" onclick="grade(${q})"><b>${n}</b><small>${q==1?"à revoir":nx(s,q).i+" jour(s)"} · ${i+1}</small></button>`).join("")}</div><p class="keyboard-hint"><span class="key">1</span> Raté &nbsp; <span class="key">2</span> Hésité &nbsp; <span class="key">3</span> Réussi</p>`;
+ return h+`</article>`}
+const rev=()=>{show=true;render()};
+function lib(){const A=all();return `<div class="library-head"><div><div class="eyebrow">Bibliothèque</div><div style="font:500 1.55rem Georgia,serif">Toutes tes cartes</div></div><span>${A.length} cartes</span></div><details class="add-card"><summary>Créer une carte personnelle</summary><div class="add-form"><div class="field"><label for="ac">CHAPITRE</label><input id="ac" value="Perso" aria-label="Chapitre"></div><div class="field"><label for="at">TYPE DE CARTE</label><select id="at"><option value="D">Définition</option><option value="T">Théorème</option><option value="P">Démonstration</option></select></div><div class="field"><label for="aq">QUESTION / ÉNONCÉ</label><input id="aq" placeholder="Ex. : Démontrer que…"></div><div class="field"><label for="aa">RÉPONSE / CORRECTION</label><textarea id="aa" rows="5" placeholder="Tu peux écrire les formules en LaTeX : \\( ... \\) ou \\[ ... \\]"></textarea></div><button class="primary-btn" style="margin-top:2px" onclick="addc()">Ajouter à ma bibliothèque <span class="arrow">＋</span></button><p class="hint">Les formules entre délimiteurs LaTeX seront affichées automatiquement.</p></div></details>`
+ +chs().map(ch=>`<section class="chapter-section"><h3 class="chapter-title">${E(ch)}</h3>`+A.filter(c=>c.ch==ch).map(c=>`<details class="library-item"><summary><i class="status-dot d${st(c)}"></i><span class="summary-title">${E(c.q)}</span><span class="type-tag">${TY[c.ty]}</span><span class="chevron">⌄</span></summary><div class="library-answer">${E(c.a)}</div></details>`).join("")+`</section>`).join("")}
+function addc(){const q=$("#aq").value.trim(),a=$("#aa").value.trim();if(!q||!a){alert("Ajoute une question et une réponse.");return}S.x.push({id:"x"+Date.now(),ch:$("#ac").value.trim()||"Perso",ty:$("#at").value,q,a});save();built=false;render()}
+function prog(){const A=all(),n=[0,0,0],t=today();A.forEach(c=>n[st(c)]++);
+ const due=A.filter(c=>S.c[c.id]&&S.c[c.id].d<=t).length,tot=Object.values(S.l).reduce((s,l)=>s+l.r,0);
+ let days="";for(let i=13;i>=0;i--){const r=(S.l[t-i]||{}).r||0;days+=`<div class="day-cell" title="${r} révision${r>1?"s":""}"><span style="height:${Math.min(100,r*8)}%"></span></div>`}
+ const bar=(m,l,z)=>{const total=m+l+z||1;return `<div class="progress-bar"><i class="ok" style="width:${m/total*100}%"></i><i class="mid" style="width:${l/total*100}%"></i><i class="new" style="width:${z/total*100}%"></i></div>`};
+ return `<div class="eyebrow">Tableau de bord</div><div style="font:500 1.65rem Georgia,serif;margin-bottom:18px">Ta progression</div><div class="stats-grid"><div class="stat-card"><b class="stat-value">${due}</b><span class="stat-label">Cartes à revoir</span></div><div class="stat-card"><b class="stat-value">${streak()}</b><span class="stat-label">Jours consécutifs</span></div><div class="stat-card"><b class="stat-value">${tot}</b><span class="stat-label">Révisions effectuées</span></div></div><section class="progress-card"><div class="progress-title"><span>Maîtrise globale</span><span>${Math.round(n[2]/A.length*100||0)} % maîtrisé</span></div>${bar(n[2],n[1],n[0])}<div class="progress-legend"><span><i class="legend-dot" style="background:var(--success)"></i>${n[2]} maîtrisées</span><span><i class="legend-dot" style="background:var(--warning)"></i>${n[1]} en cours</span><span><i class="legend-dot" style="background:var(--line)"></i>${n[0]} nouvelles</span></div></section><section class="progress-card"><div class="progress-title"><span>Activité récente</span><span>14 derniers jours</span></div><div class="days">${days}</div><div class="day-labels"><span>Il y a 14 jours</span><span>Aujourd’hui</span></div></section><section class="progress-card"><div class="progress-title"><span>Maîtrise par chapitre</span><span>${A.length} cartes</span></div>${chs().map(ch=>{const L=A.filter(c=>c.ch==ch),m=L.filter(c=>st(c)==2).length,l=L.filter(c=>st(c)==1).length;return `<div class="chapter-row"><span>${E(ch)}</span>${bar(m,l,L.length-m-l)}<span class="chapter-count">${m}/${L.length}</span></div>`}).join("")}</section><button class="reset-btn" onclick="if(confirm('Effacer toute la progression et les cartes personnelles ?')){S={c:{},x:[],l:{}};save();built=false;render()}">Réinitialiser toutes les données</button>`}
+function render(){const names=["Réviser","Cartes","Progrès"];$("#t").innerHTML=names.map((n,i)=>`<button type="button" class="${i==tab?"on":""}" aria-current="${i==tab?"page":"false"}" onclick="tab=${i};render()">${n}</button>`).join("");$("#v").innerHTML=[rv,lib,prog][tab]();mathTypeset()}
+const savedTheme=localStorage.getItem("rd-theme");if(savedTheme==="dark"||savedTheme==="light")document.documentElement.dataset.theme=savedTheme;
+$("#themeToggle").addEventListener("click",()=>{const next=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=next;localStorage.setItem("rd-theme",next);$("#themeToggle").textContent=next==="dark"?"☼":"◐"});
+$("#themeToggle").textContent=document.documentElement.dataset.theme==="dark"?"☼":"◐";
+onkeydown=e=>{if(tab||!Q.length||e.target.matches("input,textarea,select"))return;if(!show&&(e.key==" "||e.key=="Enter")){e.preventDefault();rev()}else if(show&&"123".includes(e.key)&&e.key.length==1)grade([1,3,5][+e.key-1])};
+render();
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(err => console.warn("Service worker non enregistré :", err));
+  });
+}
+</script></body></html>

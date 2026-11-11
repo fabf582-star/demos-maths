@@ -1,0 +1,18 @@
+DÉMOS — VERSION INSTALLABLE (PWA)
+
+Contenu :
+- index.html : l'application
+- manifest.webmanifest : nom, icône et réglages d'installation
+- sw.js : cache de l'application
+- icons/ : icônes Android
+
+INSTALLATION SUR ANDROID
+1. Héberger TOUS les fichiers de ce dossier sur un site HTTPS (par exemple GitHub Pages).
+2. Ouvrir l'adresse du site dans Chrome sur le téléphone.
+3. Menu ⋮ > « Installer l'application » ou « Ajouter à l'écran d'accueil ».
+4. Lancer « Démos » depuis l'icône créée.
+
+IMPORTANT
+- Ne pas ouvrir index.html directement depuis le dossier Téléchargements pour l'installation PWA : l'installation nécessite une adresse HTTPS.
+- Les formules LaTeX nécessitent une connexion Internet la première fois que MathJax est chargé. Le contenu de l'application est mis en cache ; MathJax n'est pas inclus localement dans ce paquet.
+- Les cartes et la progression sont stockées localement dans le navigateur/appareil ; elles ne se synchronisent pas automatiquement entre appareils.
